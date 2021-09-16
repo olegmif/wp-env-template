@@ -24,7 +24,7 @@ http {
         ## Your website name goes here.
         server_name *.$DOMAIN;
         ## Your only path reference.
-        root /var/www/html
+        root /var/www/html;
         ## This should be in your http block and if it is, it's not needed here.
         index index.php;
 
