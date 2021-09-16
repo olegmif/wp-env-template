@@ -9,7 +9,7 @@ services:
       DOMAIN: $DOMAIN
     volumes:
       - ./config/nginx.conf.template:/etc/nginx/nginx.conf.template
-      - ./cms:/srv/$PROJECT_NAME
+      - ./cms:/var/www/html
     ports:
       - 80:80
     depends_on:
@@ -42,8 +42,7 @@ services:
       WORDPRESS_DEBUG: 0
     volumes:
       - ./cms:/var/www/html
-      - ./cms:/srv/$PROJECT_NAME
-      - ./config/php_config.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./config/php.conf:/usr/local/etc/php/conf.d/uploads.ini
     ports:
       - 9000
     depends_on:
